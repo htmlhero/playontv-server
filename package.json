@@ -1,6 +1,17 @@
 {
   "name": "playontv-server",
   "version": "1.0.0",
+  "description": "Server for data transfer to Smart TV applications",
+  "author": "Andrew Motoshin <andrew@htmlhero.ru>",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:htmlhero/playontv-server.git"
+  },
+  "keywords": [
+    "server",
+    "smart tv",
+    "tv"
+  ],
   "engines": {
     "node": ">=8.0.0",
     "npm": ">=5.2.0"
