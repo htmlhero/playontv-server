@@ -6,6 +6,7 @@
     "npm": ">=5.2.0"
   },
   "scripts": {
+    "start": "node index.js",
     "eslint": "eslint lib test index.js",
     "test": "mocha test/*.js"
   },
