@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Server for data transfer to Smart TV applications",
   "author": "Andrew Motoshin <andrew@htmlhero.ru>",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git@github.com:htmlhero/playontv-server.git"
@@ -20,7 +21,8 @@
   "files": [
     "package.json",
     "index.js",
-    "lib"
+    "lib",
+    "LICENSE"
   ],
   "scripts": {
     "start": "node index.js",
