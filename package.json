@@ -22,7 +22,8 @@
     "package.json",
     "index.js",
     "lib",
-    "LICENSE"
+    "LICENSE",
+    "README.md"
   ],
   "scripts": {
     "start": "node index.js",
