@@ -146,22 +146,33 @@ describe('getVideo method', () => {
 			});
 	}).timeout(2000);
 
-	it('Getting error when setting XSS data', (done) => {
-		const video = {
+	it('Getting sanitized data when setting XSS data', (done) => {
+		const videoInput = {
 			title: 'Dangerous <script>alert("!")</script> video',
+			url: 'https://example.com/xss'
+		};
+		const videoOutput = {
+			title: 'Dangerous  video',
 			url: 'https://example.com/xss'
 		};
 
 		chai
 			.request(baseUrl)
 			.get('/setVideo')
-			.query(video)
-			.end((err, res) => {
-				expect(err).to.be.null;
+			.query(videoInput)
+			.then(() => {
+				chai
+					.request(baseUrl)
+					.get('/getVideo')
+					.end((err, res) => {
+						expect(err).to.be.null;
 
-				expect(res).to.have.status(400);
+						expect(res).to.have.status(200);
+						expect(res).to.be.json;
+						expect(res.body).to.deep.equal(videoOutput);
 
-				done();
+						done();
+					});
 			});
 	}).timeout(2000);
 });
